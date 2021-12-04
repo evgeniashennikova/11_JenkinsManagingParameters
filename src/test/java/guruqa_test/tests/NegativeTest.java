@@ -1,5 +1,7 @@
 package guruqa_test.tests;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -10,22 +12,18 @@ import static io.qameta.allure.Allure.step;
 
 public class NegativeTest {
 
+
     @Tag("NegativeTest")
     @Test
     void hh_ruTestNegative() {
 
         step("Открыть главную страницу сайта hh.ru", () -> open("https://hh.ru"));
 
-        step("В поисковой строке написать название должности", () -> {
-            $("[data-qa='search-input']").setValue("QA Engineer");
+        step("Проверить текст заголовка", () -> {
+            String actualResult = $(".bloko-header-promo-3").getText();
+            Assertions.assertEquals("Найти вакансию", actualResult);
         });
 
-        step("Нажать кнопку 'Найти работу' для начала поиска", () ->
-                $("[data-qa='search-button']").click());
-
-        step("На странице результатов поиска проверить вакансии на соответствие введённому запросу", () -> {
-            $("[data-qa='vacancy-serp__results']").shouldHave(text("Продавец"));
-        });
     }
 
 }
