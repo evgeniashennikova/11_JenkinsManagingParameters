@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class SampleTest {
+public class SampleTest extends TestBase {
 
     @Tag("hh_ruTest")
     @Test

@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class NegativeTest {
+public class NegativeTest extends TestBase {
 
 
     @Tag("NegativeTest")
