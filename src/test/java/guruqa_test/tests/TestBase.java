@@ -27,11 +27,11 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
 
-//        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
-//        Configuration.remote = format("https://%s:%s@%s",
-//                credentials.login(), credentials.password(), url);
+        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
+        Configuration.remote = format("https://%s:%s@%s",
+                credentials.login(), credentials.password(), url);
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+
     }
 
     @AfterEach
