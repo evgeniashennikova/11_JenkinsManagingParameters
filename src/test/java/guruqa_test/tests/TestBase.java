@@ -20,7 +20,7 @@ public class TestBase {
     static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        String url = System.getProperty("url", "");
+        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
         Configuration.remote = format("https://%s:%s@%s",
                 credentials.login(), credentials.password(), url);
 
